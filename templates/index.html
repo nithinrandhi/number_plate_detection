@@ -1,0 +1,41 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<p>
+<h1 class="my-5 text-center text-[20px] font-bold uppercase main-title">Upload your car image below</h1>
+</p>
+<div class="container">
+    <div class="flex flex-col items-center row">
+        <form action="/" enctype="multipart/form-data" method="POST" class="flex flex-col h-[100%] w-[100%] justify-center items-center">
+            <div class="container-lg flex items-center justify-center w-[500px]">
+                <div class="flex justify-center">
+                    <div class="mb-3 w-96">
+                        <!-- <label for="formFile" class="mb-2 inline-block text-neutral-700 dark:text-neutral-200">Select an Image</label> -->
+                        <input class="relative m-0 block w-full min-w-0 flex-auto cursor-pointer rounded border border-solid border-neutral-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out file:-mx-3 file:-my-1.5 file:cursor-pointer file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-1.5 file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[margin-inline-end:0.75rem] file:[border-inline-end-width:1px] hover:file:bg-neutral-200 focus:border-primary focus:bg-white focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none dark:bg-transparent dark:text-neutral-200 dark:focus:bg-transparent"
+                              type="file" id="formFile" name="image" />
+                    </div>
+                </div>
+            </div>
+            <button
+                  class="my-5 bg-transparent hover:bg-[#00eaff] text-[#00eaff] font-semibold hover:text-black py-2 px-4 border border-[#00eaff] rounded">
+                Detect
+            </button>
+            <div>
+                <label for="first_name"
+                      class="text-center block mb-2 text-sm font-medium text-[#00eaff] dark:text-white">DETECTED
+                    NUMBER</label>
+                <input type="text" id="first_name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-center"
+                      placeholder="" readonly value="{{data.text}}">
+                      
+            </div>
+            
+            <!-- {{data.res}} -->
+            
+        </form>
+    </div>
+    {% if data.res %}
+        <img class="rounded-md m-3 mt-5 h-[150px] mx-auto self-center border-2 border-[white]" src="../static/Images/car.jpg" alt="car">
+    {% endif %}
+</div>
+{% endblock content %}

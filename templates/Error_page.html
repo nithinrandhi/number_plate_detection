@@ -1,0 +1,20 @@
+{% extends 'header.html' %}
+
+{% block title %}
+<title>Page not found</title>
+{% endblock title %}
+
+{% block body %}
+
+<!-- Error page structure -->
+<div class="container error_details">
+    <div class="image_container">
+        <img src="../static/Images/page-not-found.svg" alt="Something went wrong" >
+    </div>
+    <div class="wrapper">
+        <h1>Page Not Found</h1>
+        <p class="message">Error!!! Page not found or incorrect details.</p>
+        <a class="go_to_home_button" href="/">Back to home</a>
+    </div>
+</div>
+{% endblock body %}
